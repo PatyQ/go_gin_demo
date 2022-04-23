@@ -1,14 +1,19 @@
 package router
 
 import (
+	"fmt"
 	"github.com/gin-gonic/gin"
 )
 
 var (
-	router      *gin.Engine
-	routerGroup *gin.RouterGroup
+	router *gin.Engine
+	//routerGroup *gin.RouterGroup
 	//group  errgroup.Group // 服务组
 )
+
+func init() {
+	fmt.Println("router init")
+}
 
 func Init() {
 	router = gin.Default()
