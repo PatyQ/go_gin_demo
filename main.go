@@ -16,7 +16,8 @@ func init() {
 func main() {
 	//test.GetCfg()
 	//router.Run()
-	http.Handle("/time", timeMiddleware(DownFile))
+	http.Handle("/time", timeMiddleware(DownFile)) // 这里不能使用handleFunc
+	//http.HandleFunc("/time", timeMiddleware(DownFile)) // 这里不能使用handleFunc
 	http.ListenAndServe(":80", nil)
 }
 
